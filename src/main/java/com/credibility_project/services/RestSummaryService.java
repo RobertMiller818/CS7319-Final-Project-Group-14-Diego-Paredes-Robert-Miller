@@ -31,8 +31,8 @@ public class RestSummaryService {
             // See https://platform.openai.com/docs/guides/text-generation for documentation
            // String endpoint = "https://api.openai.com/v1/chat/completions";
             String endpoint = "https://api.openai.com/v1/chat/completions";
-            //String model = "gpt-3.5-turbo";
-            String model = "davinci-002";
+            String model = "gpt-3.5-turbo";
+            //String model = "davinci-002";
 
             // Create a summarization request
             //URL url = new URL(endpoint);
@@ -40,7 +40,7 @@ public class RestSummaryService {
             con.setRequestMethod("POST");
             con.setRequestProperty("Authorization", "Bearer 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");
             con.setRequestProperty("Content-Type", "application/json");
-            int maxTokens = 4096;
+            int maxTokens = 1024;
             JSONArray messages = new JSONArray();
             JSONObject userMessage = new JSONObject();
             userMessage.put("role", "user");
