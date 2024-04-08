@@ -57,11 +57,11 @@ app.post('/submit-topic', async (req, res) => {
 // Endpoint to retrieve processed articles from the database
 app.get('/articles', async (req, res) => {
     const client = await dbConnection;
-    const db = client.db("appDatabase");
-    const blackboard = db.collection('blackboard');
+    const db = client.db("appDatabase"); // Replace with your actual db name
+    const collection = db.collection('articles');
 
     try {
-        const articles = await blackboard.find({ status: 'completed' }).sort({ _id: -1 }).limit(10).toArray();
+        const articles = await collection.find().sort({ createdAt: -1 }).limit(10).toArray();
         res.json(articles);
     } catch (error) {
         console.error('Error retrieving articles:', error);
