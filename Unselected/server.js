@@ -1,5 +1,4 @@
 const express = require('express');
-const amqp = require('amqplib/callback_api');
 const axios = require('axios');
 const cors = require('cors');
 const dbConnection = require('./db'); // Import the database connection
