@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Credibility Web Ranking System - Search</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2rem;
+        }
+        #search-container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        #search-input {
+            width: calc(100% - 4rem);
+            padding: 1rem;
+            margin-right: 1rem;
+            font-size: 1rem;
+        }
+        #articles-container {
+            width: 100%;
+            max-width: 800px;
+        }
+        .article {
+            padding: 1rem;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+        .article:hover {
+            background-color: #f9f9f9;
+        }
+        .summary {
+            color: #555;
+        }
+        .score {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<h1>Credibility Web Ranking System</h1>
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="Enter a topic..." class="input" />
+    <button onclick="submitTopic()" class="button primary">Search</button>
+</div>
+<div id="articles-container">
+    <!-- Articles will be added here dynamically -->
+</div>
+<script src="script.js"></script>
+</body>
+</html>

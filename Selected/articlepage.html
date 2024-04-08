@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Article Detail</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2rem;
+        }
+        #article-container {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+        .summary, .credibility-score {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div id="article-container">
+    <!-- Article details will be added here dynamically -->
+</div>
+<script>
+    // Function to get article ID from URL query parameters
+    function getArticleIdFromQuery() {
+        const queryParams = new URLSearchParams(window.location.search);
+        return queryParams.get('articleId');
+    }
+
+    const articleId = getArticleIdFromQuery(); // Use this function to get the article ID
+
+    function fetchArticleDetail(articleId) {
+        fetch('http://localhost:3000/article/' + articleId)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Article not found');
+                }
+                return response.json();
+            })
+            .then(article => {
+                document.title = article.title;
+                const container = document.getElementById('article-container');
+                container.innerHTML = `
+                <h1>${article.title}</h1>
+                <p class="summary">${article.summary}</p>
+                <p class="credibility-score">Credibility Score: ${article.credibilityScore}</p>
+                <!--<p>${article.content}</p>        PUT BACK WHEN GETS ACTUAL FULL CONTENT-->
+            `;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('article-container').innerHTML = '<p>Article not found.</p>';
+            });
+    }
+
+    // Call fetchArticleDetail on page load to display the article
+    fetchArticleDetail(articleId);
+</script>
+</body>
+</html>
