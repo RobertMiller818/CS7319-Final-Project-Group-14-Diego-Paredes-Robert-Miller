@@ -10,12 +10,13 @@ Installation: Follow the installation instructions on the Node.js website for yo
 
 Configuration: After installation, we will use npm to install all the required dependencies. This is detailed in the next step. Any other specific package versions are contained in the _package.json_ in the project directory and will be downloaded by npm.
 
-1. **How to Compile Our Code**:
+2. **How to Compile Our Code**:
 
 Since we used Node.js applications we do not need compilation. Instead, you ensure all dependencies are installed:
 
 1. Navigate to the project directory in the command prompt (Either “Selected” or “Unselected”, publisher-subscriber architecture and blackboard style respectively).
 2. Run _npm install_ to install all dependencies specified in the package.json file.
+
 3. **How to Execute Our System**:
 
 - Start the Server:
@@ -33,7 +34,7 @@ Since we used Node.js applications we do not need compilation. Instead, you ensu
 - Access the Application:
   - Open a web browser and navigate to the “_index.html_” file in the project directory to access the application.
 
-1. **Differences Between Architecture Designs and the Rationales For Our Final Selection: Publisher-Subscriber architectural style**
+4. **Differences Between Architecture Designs and the Rationales For Our Final Selection: Publisher-Subscriber architectural style**
 
 After thorough evaluation and implementation of both the Publisher-Subscriber and Blackboard architectural styles, our team chose to select the Publisher-Subscriber architecture for the final implementation of the project. Here are the detailed rationales behind this choice:
 
@@ -45,13 +46,13 @@ After thorough evaluation and implementation of both the Publisher-Subscriber an
 
 While the Blackboard architecture also has its merits, especially in terms of collaborative problem-solving, the Publisher-Subscriber architecture was deemed more suitable for the project's needs, particularly concerning scalability and component independence.
 
-1. **Any Changes in Architecture Options and Summary**:
+5. **Any Changes in Architecture Options and Summary**:
 
 We did not change our architecture options from the project proposal to our final deliverables.
 
 Summary: While the Blackboard architecture offers significant benefits for collaborative problem-solving and dynamic interaction, the Publisher-Subscriber architecture was chosen for its alignment with the project's specific goals, its superior support for scalability, decoupling, flexibility, and fault tolerance. These factors collectively ensured that the Publisher-Subscriber architecture was the optimal choice for the Credibility Project's requirements.
 
-1. **Additional Information (Major Differences in the Source Code For the Different Styles)**:
+6. **Additional Information (Major Differences in the Source Code For the Different Styles)**:
 
 Pub-Sub Style:
 
