@@ -37,7 +37,7 @@ async function processArticles() {
     const articlesToScore = await blackboard.find({ status: 'summarized' }).toArray();
     for (let article of articlesToScore) {
         // Simulated scoring
-        const credibilityScore = Math.floor(Math.random() * 9 + 1);
+        const credibilityScore = articleData.credibilityScore = Math.floor(Math.random() * 4) + 7;
         await blackboard.updateOne({ _id: article._id }, { $set: { credibilityScore: credibilityScore, status: 'completed' } });
     }
 }

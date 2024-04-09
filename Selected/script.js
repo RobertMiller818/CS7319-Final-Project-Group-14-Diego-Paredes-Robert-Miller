@@ -14,6 +14,7 @@ function submitTopic() {
                 console.log(data);
                 // After submitting the topic, get articles
                 getArticles();
+                location.reload();
             })
             .catch(error => console.error('Error:', error));
     }

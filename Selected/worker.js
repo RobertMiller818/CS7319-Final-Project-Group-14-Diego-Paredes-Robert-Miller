@@ -48,7 +48,7 @@ amqp.connect(process.env.RABBITMQ_CONN_URL, (err, conn) => {
 
             //articleData.summary = await summarizeArticle(articleData.content);
             articleData.summary = articleData.content
-            articleData.credibilityScore = Math.floor(Math.random() * 9 + 1);
+            articleData.credibilityScore = Math.floor(Math.random() * 4) + 7;
 
             try {
                 if (!(articleData.title == "[Removed]" || articleData.content == "[Removed]" || articleData.summary == undefined || articleData.credibilityScore == undefined)) {
